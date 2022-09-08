@@ -1,4 +1,4 @@
-function month() {
+function month(m = null) {
   const months = [
     "jan",
     "feb",
@@ -13,6 +13,9 @@ function month() {
     "nov",
     "dec",
   ];
-  const m = new Date().getMonth();
-  return months[m];
+  if (m == null) {
+    const m = new Date().getMonth();
+    return months[m];
+  }
+  return months[m - 1];
 }
